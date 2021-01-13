@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot</title>
+</head>
+<body>
+<body>
+<h1>Authors List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>LastName</th>
+        <th>Books</th>
+    </tr>
+    <tr th:each="author: ${authors}">
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.firstName}"></td>
+        <td th:text="${author.lastName}"> </td>
+        <td th:each="book:${author.books}">
+         <span th:text="${book.title}"></span>
+        </td>
+        <!-- <td th:text="${book.pub.name}">Wrox</td> -->
+    </tr>
+</table>
+
+</body>
+</body>
+</html>
